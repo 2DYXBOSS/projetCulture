@@ -1,6 +1,115 @@
-{% for item in items %}
-  <h2><a href="{% url 'item_detail' pk=item.pk %}">{{ item.name }}</a></h2>
-  <p>{{ item.description }}</p>
-{% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-<a href="{% url 'item_new' %}">Ajouter un nouvel item</a>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    
+
+    
+</head>
+
+<style>
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    padding-top: 100px;
+    background-color: #3548c219;
+  }
+  a {
+    color: black;
+  }
+ 
+  table {
+    width: 100%;
+    max-width: 500px;
+    border-collapse: collapse; 
+    background-color: white;
+    margin-bottom: 20px;
+    border: 1px solid black;
+   
+  }
+
+  th {
+    background-color: #007bff; 
+    padding: 10px; 
+    text-align: left; 
+    border-bottom: 2px solid #ddd;
+    color: white; 
+  }
+
+  
+  td {
+    padding: 10px; 
+    border-bottom: 1px solid #ddd; 
+  }
+  tr:hover{
+    background-color: #007bff;
+  }
+  tr:hover td a{
+    color: white;
+  }
+  tr:hover td {
+    color: white;
+  }
+
+  
+  td a {
+    color: black; 
+    text-decoration: none; 
+  }
+
+  
+  .liwn {
+    display: block;
+    margin-top: 20px; 
+    text-decoration: none; 
+    color: white;
+    padding: 15px 15px ;
+    background-color: #007bff;
+    border-radius: 5px;
+    
+  }
+</style>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">N•</th>
+        <th style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Nom</th>
+        <th style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+        <tr>
+          
+          <td><a href="{% url 'item_detail' pk=item.pk %}" >{{ item.id }}</a></td>
+          <td><a href="{% url 'item_detail' pk=item.pk %}" >{{ item.name }}</a></td>
+          <td>{{ item.description }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <a class="liwn" href="{% url 'item_new' %}">Ajouter un nouvel item</a>
+</body>
+
+
+
+

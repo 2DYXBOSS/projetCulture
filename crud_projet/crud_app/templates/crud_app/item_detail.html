@@ -1,5 +1,128 @@
-<h1>{{ item.name }}</h1>
-<p>{{ item.description }}</p>
 
-<a href="{% url 'item_edit' pk=item.pk %}">Éditer</a>
-<a href="{% url 'item_delete' pk=item.pk %}">Supprimer</a>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    
+
+    
+</head>
+
+<style>
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    padding-top: 100px;
+    background-color: #3548c219;
+  }
+  a {
+    color: black;
+  }
+ 
+  table {
+    width: 100%;
+    max-width: 500px;
+    border-collapse: collapse; 
+    background-color: white;
+    margin-bottom: 20px;
+    border: 1px solid black;
+   
+  }
+
+  th {
+    background-color: #007bff; 
+    padding: 10px; 
+    text-align: left; 
+    border-bottom: 2px solid #ddd;
+    color: white; 
+  }
+
+  
+  td {
+    padding: 10px; 
+    border-bottom: 1px solid #ddd; 
+  }
+
+  
+  td a {
+    color: #007bff; 
+    text-decoration: none; 
+  }
+
+  
+  .liwn {
+    display: block;
+    margin-top: 20px; 
+    text-decoration: none; 
+    color: white;
+    padding: 15px 15px ;
+    background-color: #007bff;
+    border-radius: 5px;
+    
+  }
+  .liwn2 {
+    display: block;
+    margin-top: 20px; 
+    text-decoration: none; 
+    color: #007bff;
+    padding: 15px 15px ;
+    background-color: white;
+    border-radius: 5px;
+    
+  }
+</style>
+
+<body>
+
+    <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 70px;color: rgb(41, 164, 41);">Nouvel item ajoué</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">N•</th>
+        <th style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Nom</th>
+        <th style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Description</th>
+        <th style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Éditer</th>
+        <th style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Supprimer</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+        <tr>
+          
+          <td><a href="{% url 'item_detail' pk=item.pk %}" style="color: black;">{{ item.id }}</a></td>
+          <td><a href="{% url 'item_detail' pk=item.pk %}" style="color: black;">{{ item.name }}</a></td>
+          <td>{{ item.description }}</td>
+          <td><a href="{% url 'item_edit' pk=item.pk %}" style="background-color: green;padding: 10px 20px;color: white;">Éditer</a></td>
+          <td><a href="{% url 'item_delete' pk=item.pk %}" style="background-color: red;padding: 10px 20px;color: white;">Supprimer</a></td>
+        </tr>
+    
+    </tbody>
+  </table>
+
+  <a class="liwn" href="{% url 'item_new' %}">Ajouter un nouvel item</a>
+  <a class="liwn2" href="{% url 'item_list' %}">Retour acceuil</a>
+
+
+  
+
+</body>

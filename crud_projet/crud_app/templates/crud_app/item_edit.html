@@ -1,6 +1,81 @@
-<h2>Nouvel item</h2>
-<form method="POST" class="item-form">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Sauvegarder</button>
-</form>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    
+
+    
+</head>
+
+<style>
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    padding-top: 100px;
+    background-color: #3548c219;
+  }
+  input {
+    width: 100%;
+    max-width: 500px;
+    height: 40px;
+    padding-left: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(137, 137, 137, 0.254);
+    outline: none;
+  }
+  textarea {
+   
+    padding-top: 10px;
+    width: 100%;
+    max-width: 500px;
+    /* height: 40px; */
+    padding-left: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(137, 137, 137, 0.254);
+    resize: none;
+    outline: none;
+
+    
+  }
+  button {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+    margin-top: 30px;
+    max-width: 500px;
+  }
+  
+</style>
+
+<body>
+  
+  <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 70px;">Nouvel item</h2>
+  <form method="POST" class="item-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sauvegarder</button>
+  </form>
+
+</body>
